@@ -86,10 +86,10 @@ public class ChessBoard {
         System.out.println("==============================");
 
         //grab from and to from the user input
-        int fromX = Integer.parseInt(directionPiece.substring(0, 1));
-        int fromY = Integer.parseInt(directionPiece.substring(1, 2));
-        int toX = Integer.parseInt(directionPiece.substring(2, 3));
-        int toY = Integer.parseInt(directionPiece.substring(3, 4));
+        int fromY = Integer.parseInt(directionPiece.substring(0, 1));
+        int fromX = Integer.parseInt(directionPiece.substring(1, 2));
+        int toY = Integer.parseInt(directionPiece.substring(2, 3));
+        int toX = Integer.parseInt(directionPiece.substring(3, 4));
         
         //Check coordinates for validity
         if(fromX > 7 || fromX < 0 || toX > 7 || toX < 0 || fromY > 7 || fromY < 0 || toY > 7 || toY < 0){
@@ -309,10 +309,10 @@ class Pawn extends ChessPiece{
     }
     
     public boolean validKillMove(boolean in, int fromX, int fromY, int toX, int toY){
-        if(this.color == 'B' && in && Math.abs(toX - fromX) == Math.abs(toY - fromY) && toX - fromX == -1){
+        if(this.color == 'B' && in && Math.abs(toX - fromX) == Math.abs(toY - fromY) && toY - fromY == 1){
             return true;
         }
-        else if(this.color == 'W' && in && Math.abs(toX - fromX) == Math.abs(toY - fromY) && toX - fromX == 1){
+        else if(this.color == 'W' && in && Math.abs(toX - fromX) == Math.abs(toY - fromY) && toY - fromY == -1){
             return true;
         }
         return false;
